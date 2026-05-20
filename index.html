@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>The Last Sunday: PremPredict Final-Day Essay</title>
+    <link rel="stylesheet" href="static/css/styles.css">
+    <script src="static/js/final_day.js" defer></script>
+  </head>
+  <body>
+    <header class="hero">
+      <div class="hero__inner">
+        <p class="kicker">PremPredict, after 37 matches</p>
+        <h1>The Last Sunday</h1>
+        <p class="standfirst">Five players, eleven predictions each, ten simultaneous kick-offs. Crypto and HeMan begin level on 38, Bapuji is two strokes back, and Nige and Rocket are standing where long-shot stories usually begin: needing chaos.</p>
+        <div class="score-strip" aria-label="Current prediction scores">
+          <div><strong>Crypto</strong><em>P</em><span>38</span></div>
+          <div><strong>HeMan</strong><em>D</em><span>38</span></div>
+          <div><strong>Bapuji</strong><em>M</em><span>40</span></div>
+          <div><strong>Nige</strong><em>S</em><span>44</span></div>
+          <div><strong>Rocket</strong><em>R</em><span>44</span></div>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <article class="essay">
+        <section class="section">
+          <p class="lede">This is a competition scored in pain avoided. Every club one place away from a player’s prediction adds one point; every wrong leap down the table is a little cut. The lowest total wins.</p>
+          <p>Arsenal and Manchester City are locked into first and second for this model. Manchester United are fixed in third. That means the title of the prediction game will not be decided at the summit. It lives in the softer ground: Liverpool versus Villa for fourth and fifth, Bournemouth and Brighton around sixth and seventh, Chelsea, Brentford and Sunderland sliding around the high mid-table, and a brutal bottom-five hinge between Leeds, West Ham, Burnley and Wolves.</p>
+        </section>
+
+        <section class="section">
+          <h2>The Race As It Stands</h2>
+          <div class="odds-grid">
+            <div class="competitor competitor--lead">
+              <span class="competitor__letter">Crypto</span>
+              <h3>The front-runner by shape, not by score</h3>
+              <p>Crypto is tied with HeMan today, but owns the broadest road through Sunday: a sole-win path in 43.7% of result combinations and a share of first in 80.1%.</p>
+            </div>
+            <div class="competitor competitor--chase">
+              <span class="competitor__letter">HeMan</span>
+              <h3>The live challenger</h3>
+              <p>HeMan can still win outright in 11.7% and share first in 35.3%. HeMan’s strongest weapon is West Ham: a perfect current hit at 18th that must not be disturbed.</p>
+            </div>
+            <div class="competitor competitor--outside">
+              <span class="competitor__letter">Bapuji</span>
+              <h3>The narrow path</h3>
+              <p>Bapuji needs the table to lean into his Manchester City, Liverpool and West Ham calls while limiting damage from Tottenham, who are miles from Bapuji’s sixth-place pick.</p>
+            </div>
+            <div class="competitor competitor--long">
+              <span class="competitor__letter">Nige</span>
+              <h3>The chaos ticket</h3>
+              <p>Nige can still land the storybook result, but only in 2.0% of combinations. The route needs Chelsea and Sunderland to move in exactly the kind of awkward way that hurts the leaders.</p>
+            </div>
+            <div class="competitor competitor--closed">
+              <span class="competitor__letter">Rocket</span>
+              <h3>The door is almost shut</h3>
+              <p>Rocket’s Arsenal call is immaculate and the top three are kind, but the Tottenham sixth-place pick is too heavy. In this result-only model, Rocket has no winning route.</p>
+            </div>
+          </div>
+          <p class="note">Percentages below are not bookmaker probabilities. They are shares of the 59,049 possible win/draw/loss combinations for the final ten fixtures, with a one-goal goal-difference proxy used when points are tied.</p>
+        </section>
+
+        <section class="section">
+          <h2>How The Paths Open</h2>
+          <div class="path-chart" aria-label="Winning paths by player">
+            <div class="path-row"><span>Crypto sole win</span><i style="--w:43.7%"></i><b>43.7%</b></div>
+            <div class="path-row"><span>HeMan sole win</span><i style="--w:11.7%"></i><b>11.7%</b></div>
+            <div class="path-row"><span>Bapuji sole win</span><i style="--w:5.8%"></i><b>5.8%</b></div>
+            <div class="path-row"><span>Nige sole win</span><i style="--w:2.0%"></i><b>2.0%</b></div>
+            <div class="path-row path-row--dead"><span>Rocket sole win</span><i style="--w:0%"></i><b>0.0%</b></div>
+          </div>
+          <p>Crypto’s lead is hidden because the scoreboard says tie. The simulations expose the real asymmetry: Crypto has fewer ways to be badly hurt. HeMan needs targeted movement. Bapuji needs several levers at once. Nige needs the room to catch fire. Rocket needs a mathematical door that the remaining fixtures do not seem to provide.</p>
+        </section>
+
+        <section class="section interactive-section" aria-labelledby="switchboard-title">
+          <div class="interactive-head">
+            <div>
+              <h2 id="switchboard-title">The Final-Day Switchboard</h2>
+              <p>Flip each match through home win, draw and away win. The leaderboard recalculates immediately using the same scoring rule: lower is better.</p>
+            </div>
+            <button class="reset-button" type="button" data-action="reset">Reset</button>
+          </div>
+          <div class="preset-row" aria-label="Scenario presets">
+            <button type="button" data-preset="HHHHHHHDHH">Crypto takes it</button>
+            <button type="button" data-preset="HHHAHDHDHH">HeMan takes it</button>
+            <button type="button" data-preset="AHHHHHHHHH">Bapuji takes it</button>
+            <button type="button" data-preset="HHHDHHHHHA">Nige steals it</button>
+            <button type="button" data-preset="HHHDHDHDHH">Crypto and HeMan tie</button>
+          </div>
+          <div class="switchboard">
+            <div class="fixtures" data-role="fixtures"></div>
+            <aside class="live-panel" aria-live="polite">
+              <h3>Live Prediction Table</h3>
+              <div data-role="leaderboard"></div>
+              <h3>Final Top Six</h3>
+              <ol data-role="top-six" class="mini-list"></ol>
+              <h3>Final Bottom Five</h3>
+              <ol data-role="bottom-five" class="mini-list mini-list--bottom"></ol>
+            </aside>
+          </div>
+        </section>
+
+        <section class="section">
+          <h2>The Five Final Stories</h2>
+          <p><strong>Crypto</strong> begins with the cleanest position because his errors are distributed rather than concentrated in one catastrophic dependency. Liverpool in first is already expensive, but Liverpool can still climb to fourth, and Crypto benefits if Bournemouth stay sixth while Leeds avoid drifting too far from 16th.</p>
+          <p><strong>HeMan</strong> wants order at the very bottom and a kinder day for the predicted top six. HeMan has West Ham exactly right in 18th and Burnley almost perfect in 20th. The threat is that the mid-table outsiders keep shifting while Newcastle, HeMan’s sixth-place pick, remains stranded too far down. If Newcastle fail to win at Fulham while Bournemouth avoid defeat at Forest, HeMan’s sixth-place slot stays out of reach. If Brighton beat Manchester United as well, the gap widens: Bournemouth and Brighton crowd the top-six edge, Fulham can jump Newcastle, and HeMan is left paying for a sixth-place prediction on a team still stuck around 12th or 13th.</p>
+          <p><strong>Bapuji</strong> is still alive because the two-point deficit is small and some rivals share the same damaged assumptions. But Bapuji’s Tottenham-at-six pick is an anchor. To win, Bapuji needs enough gains elsewhere that the Spurs damage becomes survivable rather than fatal. One clean route is the switchboard’s Bapuji preset: Manchester United win at Brighton, then Burnley, Palace, Fulham, Liverpool, Manchester City, Forest, Sunderland, Spurs and West Ham all win at home. That gives Bapuji Liverpool fourth and Villa fifth, keeps West Ham close to his 16th-place call, pulls Wolves closer to 18th, and pushes Brentford down towards the bottom-five danger zone he predicted. The Spurs pick still hurts, but the Liverpool/Villa/West Ham/Wolves/Brentford gains are enough to carry it.</p>
+          <p><strong>Nige</strong> is the dramatic one. Sunderland fifth looked wild; now Sunderland are 10th, and even a win can only pull them into the upper mess rather than the Champions League places. Nige’s route is therefore not about perfection. It is about making everybody else bleed at once. In the Nige preset, Sunderland beat Chelsea, Leeds win at West Ham, and Fulham draw with Newcastle while most of the top-half favourites hold serve. That combination drags Chelsea down, lifts Sunderland nearer Nige’s ambitious call, damages Crypto and HeMan on their Sunderland bottom-five picks, and hurts Bapuji by keeping Brentford and West Ham in awkward territory. A second route is similar: Sunderland win, Bournemouth lose at Forest, and Brighton fail to beat Manchester United. That narrows the sixth-to-tenth cluster, making Nige’s strange Sunderland optimism less costly while the leaders lose points on Bournemouth, Chelsea and Sunderland at the same time.</p>
+          <p><strong>Rocket</strong> has the neatest single prediction in the whole game: Arsenal first. But this scoring system rewards the full eleven, not one jewel. With Tottenham and several bottom-five calls dragging, Rocket can still shape who wins, but the model gives him no route to be the winner.</p>
+        </section>
+
+        <section class="section sources">
+          <h2>Sources And Model</h2>
+          <p>Current player scores and prediction cards are from the live <a href="https://prempredict-production.up.railway.app/">Prediction Tracker</a>. Current league positions and fixture list are from <a href="https://www.bbc.co.uk/sport/football/tables#PremierLeague">BBC Sport tables</a> and <a href="https://www.bbc.co.uk/sport/football/scores-fixtures/2026-05-24">BBC Sport fixtures for 24 May 2026</a>.</p>
+          <p>The interactive models only match result direction, not exact scorelines. Each win is treated as a one-goal margin for goal-difference tie-breaks, so edge cases with large final-day score swings may differ from the real table.</p>
+        </section>
+      </article>
+    </main>
+  </body>
+</html>

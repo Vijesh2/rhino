@@ -1,0 +1,45 @@
+# Track these files for the remote repo:
+# - index.html
+# - Staticfile
+# - railway.json
+# - .railwayignore
+# - README.md
+# - static/css/styles.css
+# - static/js/final_day.js
+# - interactives/final_day/ts/final_day.ts
+# - fasthtml-typescript-explainer-architecture.md
+
+# OS/editor noise
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+*~
+.vscode/
+.idea/
+
+# Local environment
+.env
+.env.*
+!.env.example
+
+# Dependencies and build caches
+node_modules/
+.npm/
+.pnpm-store/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+
+# Generated output and local artifacts
+dist/
+build/
+coverage/
+*.log
+tmp/
+temp/
+
+# Railway/local CLI state
+.railway/
