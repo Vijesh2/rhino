@@ -7,7 +7,9 @@
 # - static/css/styles.css
 # - static/js/final_day.js
 # - interactives/final_day/ts/final_day.ts
-# - fasthtml-typescript-explainer-architecture.md
+
+# Local agent/reference notes
+fasthtml-typescript-explainer-architecture.md
 
 # OS/editor noise
 .DS_Store

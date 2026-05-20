@@ -119,6 +119,56 @@ function scorePlayers(table) {
     });
 }
 
+function renderPickBreakdown(player, positions) {
+  const rows = predictions[player].map(([predicted, team]) => {
+    const actual = positions.get(team);
+    const points = Math.abs(predicted - actual);
+    return `
+      <div class="pick-grid">
+        <span>${predicted}</span>
+        <b>${team}</b>
+        <span>${actual}</span>
+        <strong>${points}</strong>
+      </div>
+    `;
+  }).join("");
+
+  return `
+    <div class="pick-breakdown" aria-label="${playerNames[player]} pick scores">
+      <div class="pick-grid pick-grid--head">
+        <span>Pred</span>
+        <span>Team</span>
+        <span>Actual</span>
+        <span>Pts</span>
+      </div>
+      ${rows}
+    </div>
+  `;
+}
+
+function renderProjectedTable(table) {
+  const rows = table.map((team, index) => {
+    const position = index + 1;
+    const band = position <= 6 ? "top" : position >= 16 ? "bottom" : "middle";
+    return `
+      <div class="table-row table-row--${band}">
+        <span>${position}</span>
+        <b>${team.team}</b>
+        <strong>${team.pts}</strong>
+      </div>
+    `;
+  }).join("");
+
+  return `
+    <div class="table-row table-row--head">
+      <span>Pos</span>
+      <span>Club</span>
+      <span>Pts</span>
+    </div>
+    ${rows}
+  `;
+}
+
 function renderFixtures(root) {
   root.innerHTML = fixtures.map((fixture, index) => `
     <div class="fixture">
@@ -137,21 +187,29 @@ function renderFixtures(root) {
 
 function render() {
   const table = orderedTable();
+  const positions = new Map(table.map((team, index) => [team.team, index + 1]));
   const leaderboard = scorePlayers(table);
   const leaderboardRoot = document.querySelector("[data-role='leaderboard']");
-  const topRoot = document.querySelector("[data-role='top-six']");
-  const bottomRoot = document.querySelector("[data-role='bottom-five']");
-  if (!leaderboardRoot || !topRoot || !bottomRoot) return;
+  const projectedRoot = document.querySelector("[data-role='projected-table']");
+  if (!leaderboardRoot || !projectedRoot) return;
+
+  const openPlayers = new Set(
+    Array.from(leaderboardRoot.querySelectorAll(".leader-detail[open]"))
+      .map((detail) => detail.dataset.player)
+  );
 
   leaderboardRoot.innerHTML = leaderboard.map((row, index) => `
-    <div class="leader-row">
-      <span>${index + 1}</span>
-      <b>${playerNames[row.player]}</b>
-      <strong>${row.score}</strong>
-    </div>
+    <details class="leader-detail" data-player="${row.player}" ${openPlayers.has(row.player) ? "open" : ""}>
+      <summary class="leader-row">
+        <span>${index + 1}</span>
+        <b>${playerNames[row.player]}</b>
+        <strong>${row.score}</strong>
+        <i aria-hidden="true"></i>
+      </summary>
+      ${renderPickBreakdown(row.player, positions)}
+    </details>
   `).join("");
-  topRoot.innerHTML = table.slice(0, 6).map((team) => `<li>${team.team}</li>`).join("");
-  bottomRoot.innerHTML = table.slice(-5).map((team) => `<li>${team.team}</li>`).join("");
+  projectedRoot.innerHTML = renderProjectedTable(table);
 
   document.querySelectorAll("[data-index][data-result]").forEach((button) => {
     const index = Number(button.dataset.index);
