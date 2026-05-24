@@ -38,6 +38,7 @@ __pycache__/
 # Generated output and local artifacts
 dist/
 build/
+output/
 coverage/
 *.log
 tmp/
